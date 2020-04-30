@@ -15,7 +15,7 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Checkout Sourcecode
+    - name: Checkout source code
       uses: actions/checkout@v2
 
     - name: Deploy ARM Template
