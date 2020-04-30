@@ -9,10 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    
+
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
+
     - run: |
-        az deploy infrastructure\storagedeploy.json
+        az deployment group create \
+          --name StorageAccountDeployment \
+          --resource-group savdevgithubdeploy \
+          --template-file ARMTemplates\StorageAccount.json \
+          --parameters storageAccountType=Standard_GRS
