@@ -18,5 +18,5 @@ jobs:
         az deployment group create \
           --name StorageAccountDeployment \
           --resource-group savdevgithubdeploy \
-          --template-file ARMTemplates/StorageAccount.json \
+          --template-file ./ARMTemplates/StorageAccount.json \
           --parameters storageAccountType=Standard_GRS
